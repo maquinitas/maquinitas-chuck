@@ -21,13 +21,11 @@ public class maquinitasInstrument extends Chugen {
     1 => int midiChannel;
     
     function void setupChannel(int channel) {
-        
         // define channel of the instrument
         channel => midiChannel;
     }
     
     function void setupPort(int port) {
-        
         //assign midiPort number
         //to check your midi interface, you have two options:
         //on miniAudicle
@@ -42,39 +40,43 @@ public class maquinitasInstrument extends Chugen {
         }
     }
     
-    function void sendNote(int note, int velocity) {
-        
-        //do note on message
-        //data1: 145 is note on, channel 2
-        //in binary, 1001nnnn is note on, where nnnn is midi channel
-        //nnnn 0-15 in binary, corresponding to midi channels 1-16
+    function void noteOn(int note, int velocity) {
+        // note on message
+        // data1: 143 + MIDI channel is note on
+        // MIDI channel between 1-16
         143 + midiChannel => msg.data1;
-        //when data1 is 144, data2 is pitch
-        //use 0-127 on roland tb-03 for selecting notes
+        // data2: note between 0-127
         note => msg.data2;
-        //when data1 is 144, data3 is velocity
-        //use 0-127 on roland tb-03 for selecting velocity
+        // data3: velocity between 0-127
         velocity => msg.data3;
-        
-        //send midi message
+        // send MIDI message
         midiOut.send(msg);
     }
     
+    function void noteOff(int note) {
+        // do note on message
+        // data1: 143 + MIDI channel is note on
+        // MIDI channel between 1-16
+        143 + midiChannel => msg.data1;
+        // data2: note between 0-127
+        note => msg.data2;
+        // data3: velocity 0 for note off
+        0 => msg.data3;
+        // send MIDI message
+        midiOut.send(msg);
+    }
+       
     function void allNotesOff() {
-
-        for (0 => int noteNumber; noteNumber < 127; noteNumber++) {
+        // iterate through every note
+        for (0 => int note; note < 127; note++) {       
             //do note on message
-            //data1: 145 is note on, channel 2
-            //in binary, 1001nnnn is note on, where nnnn is midi channel
-            //nnnn 0-15 in binary, corresponding to midi channels 1-16
+            // data1: 143 + MIDI channel is note on
+            // MIDI channel between 1-16
             143 + midiChannel  => msg.data1;
-            //when data1 is 144, data2 is pitch
-            //use 0-127 on roland tb-03 for selecting notes
-            noteNumber => msg.data2;
-            //when data1 is 144, data3 is velocity
-            //use 0-127 on roland tb-03 for selecting velocity
-            0 => msg.data3;
-            
+            // data2: note between 0-127
+            note => msg.data2;
+            // data3: velocity 0 for note off
+            0 => msg.data3;   
             //send midi message
             midiOut.send(msg);
         }       

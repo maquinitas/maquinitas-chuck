@@ -2,8 +2,7 @@
 // maquinitas chuck script for Roland TB-03
 
 public class RolandTB03 extends maquinitasInstrument {
-    // default MIDI channel 2 for Roland SH-01A
+    // default MIDI channel 2 for Roland TB-03
     setupChannel(2);
-    
-    
+   
 }
