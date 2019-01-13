@@ -1,6 +1,8 @@
 // maq.inst
 // base class for instruments
 
+
+// define maquinitasInstrument base class for instruments
 public class maquinitasInstrument extends Chugen {
     
     // declare MidiOut variable
@@ -18,10 +20,13 @@ public class maquinitasInstrument extends Chugen {
     // values between 1-16
     1 => int midiChannel;
     
-    function void setup(int channel, int port) {
+    function void setupChannel(int channel) {
         
         // define channel of the instrument
         channel => midiChannel;
+    }
+    
+    function void setupPort(int port) {
         
         //assign midiPort number
         //to check your midi interface, you have two options:
@@ -73,6 +78,17 @@ public class maquinitasInstrument extends Chugen {
             //send midi message
             midiOut.send(msg);
         }       
+    }
+    
+    function void controlChange(int controller, int value) {    
+        //first byte is 175 + MIDI channel for CC
+        175 + midiChannel => msg.data1;
+        // second byte of message is controller number
+        controller => msg.data2;
+        // third byte of message is the value
+        value => msg.data3;
+        //send MIDI message
+        midiOut.send(msg);  
     }
 }
 

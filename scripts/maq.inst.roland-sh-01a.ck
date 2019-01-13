@@ -3,6 +3,6 @@
 
 public class RolandSH01A extends maquinitasInstrument {
     // default MIDI channel 1 for Roland SH-01A
-    1 => midiChannel;
+    setupChannel(1);
 }
 
