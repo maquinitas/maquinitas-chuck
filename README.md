@@ -26,6 +26,7 @@ In-progress drafts:
 
 * [ChucK](http://chuck.cs.princeton.edu/)
 * [The ChucK Manual 1.2.1.3](http://chuck.cs.princeton.edu/release/files/chuck_manual.pdf)
+* [Chuck Extend](http://chuck.stanford.edu/extend/)
 
 ## License  
 
