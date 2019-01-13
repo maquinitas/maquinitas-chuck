@@ -6,13 +6,13 @@
 function void sendNote() {
     //declare MidiOut variable
     MidiOut midiOut;
-    
+
     //declare MidiMsg variable
     MidiMsg msg;
-    
+
     //declare midiPort variable
     int midiPort;
-    
+
     //assign midiPort number
     //to check your midi interface, you have two options:
     //on miniAudicle
@@ -20,12 +20,12 @@ function void sendNote() {
     //on the terminal write
     //chuck --probe
     0 => midiPort;
-    
+
     //check if midiPort is open
     if (!midiOut.open(midiPort)) {
         me.exit();
     }
-    
+
     //do note on message
     //data1: 144 is note on, channel 1
     //in binary, 1001nnnn is note on, where nnnn is midi channel
@@ -37,7 +37,7 @@ function void sendNote() {
     //when data1 is 144, data3 is velocity
     //use 0-127 on microgranny for selecting velocity
     6 => msg.data3;
-    
+
     //send midi message
     midiOut.send(msg);
 }
@@ -45,13 +45,13 @@ function void sendNote() {
 function void allNotesOff() {
     //declare MidiOut variable
     MidiOut midiOut;
-    
+
     //declare MidiMsg variable
     MidiMsg msg;
-    
+
     //declare midiPort variable
     int midiPort;
-    
+
     //assign midiPort number
     //to check your midi interface, you have two options:
     //on miniAudicle
@@ -59,12 +59,12 @@ function void allNotesOff() {
     //on the terminal write
     //chuck --probe
     0 => midiPort;
-    
+
     //check if midiPort is open
     if (!midiOut.open(midiPort)) {
         me.exit();
     }
-    
+
     for (0 => int noteNumber; noteNumber < 127; noteNumber++) {
         //do note on message
         //data1: 144 is note on, channel 1
@@ -77,23 +77,23 @@ function void allNotesOff() {
         //when data1 is 144, data3 is velocity
         //use 0-127 on microgranny for selecting velocity
         0 => msg.data3;
-      
+
          //send midi message
          midiOut.send(msg);
     }
-     
+
 }
 
 function void controlChange() {
     //declare MidiOut variable
     MidiOut midiOut;
-    
+
     //declare MidiMsg variable
     MidiMsg msg;
-    
+
     //declare midiPort variable
     int midiPort;
-    
+
     //assign midiPort number
     //to check your midi interface, you have two options:
     //on miniAudicle
@@ -101,12 +101,12 @@ function void controlChange() {
     //on the terminal write
     //chuck --probe
     0 => midiPort;
-    
+
     //check if midiPort is open
     if (!midiOut.open(midiPort)) {
         me.exit();
     }
-    
+
     //do note on message
     //data1: 176 is controller change, channel 1
     //in binary, 1011nnnn is controller on, where nnnn is midi channel
@@ -119,9 +119,9 @@ function void controlChange() {
     //when data1 is 176, data3 is controller value
     //use 0-127 on microgranny for selecting value
     Std.rand2(0, 127) => msg.data3;
-     
+
     //send midi message
-    midiOut.send(msg);  
+    midiOut.send(msg);
 }
 
 
@@ -133,6 +133,3 @@ while (true) {
     allNotesOff();
     0.01 :: second => now;
 }
-
-
-
