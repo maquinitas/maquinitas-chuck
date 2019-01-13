@@ -11,12 +11,12 @@ public class maquinitasInstrument extends Chugen {
     
     // declare midiPort variable
     // default value is 0
-    int midiPort = 0;
+    0 => int midiPort;
     
     //declare channel variable
     // default value is 1
     // values between 1-16
-    int midiChannel = 1;
+    1 => int midiChannel;
     
     function void setup(int channel, int port) {
         
