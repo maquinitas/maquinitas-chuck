@@ -7,12 +7,23 @@ RolandJP08 myJP08;
 // run chuck --probe on terminal
 // or check Window->Device Browser for number
 myJP08.setupPort(0);
-// note on
-myJP08.noteOn(100, 100);
-// let time flow
-0.5 :: second => now;
-// note off
-myJP08.noteOff(100);
-// let time flow
-0.5 :: second => now;
+
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int note;
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    myJP08.noteOn(note, velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    myJP08.noteOff(note);
+    // let time flow
+    off :: second => now;
+}
+
+
+
 
