@@ -19,14 +19,16 @@ public class maquinitasInstrument extends Chugen {
     // values between 1-16
     1 => int midiChannel;
     
-    // declare array of strings for CC params
-    // String[] paramsCC;
+    // declare array of integers for CC params
+    int[] paramsCC;
     
+    // function for setup of MIDI channel
     function void setupChannel(int channel) {
         // define channel of the instrument
         channel => midiChannel;
     }
     
+    // function for setup of MIDI port
     function void setupPort(int port) {
         //assign midiPort number
         //to check your midi interface, you have two options:
@@ -42,6 +44,7 @@ public class maquinitasInstrument extends Chugen {
         }
     }
     
+    // function for MIDI note on
     function void noteOn(int note, int velocity) {
         // note on message
         // data1: 143 + MIDI channel is note on
@@ -55,6 +58,7 @@ public class maquinitasInstrument extends Chugen {
         midiOut.send(msg);
     }
     
+    // function for MIDI note off
     function void noteOff(int note) {
         // do note on message
         // data1: 143 + MIDI channel is note on
@@ -68,6 +72,7 @@ public class maquinitasInstrument extends Chugen {
         midiOut.send(msg);
     }
        
+    // function for turning off all MIDI notes
     function void allNotesOff() {
         // iterate through every note
         for (0 => int note; note < 127; note++) {       
@@ -84,6 +89,7 @@ public class maquinitasInstrument extends Chugen {
         }       
     }
     
+    // function for changing a MIDI CC parameter
     function void controlChange(int controller, int value) {    
         //first byte is 175 + MIDI channel for CC
         175 + midiChannel => msg.data1;
