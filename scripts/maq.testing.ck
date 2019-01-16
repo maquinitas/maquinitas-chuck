@@ -28,6 +28,36 @@ while (true) {
 }
 */
 
+// new KorgVolcaFm instance
+KorgVolcaFm myVolcaFm;
+// setup myVolcaFm port
+// run chuck --probe on terminal
+// or check Window->Device Browser for number
+myVolcaFm.setupPort(0);
+// <<< myVolcaFm.notesMIDI.cap() >>>;
+// <<< myVolcaFm.ccMIDInumbers.cap() >>>;
+// <<< myVolcaFm.ccMIDInames.cap() >>>;
+
+// print number of MIDI CC parameter
+// <<< myVolcaFm.ccMIDI["algorithm"] >>>;
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int note;
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    myVolcaFm.noteOn(note, velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    myVolcaFm.noteOff(note);
+    // let time flow
+    off :: second => now;
+    
+    // CC message
+    myVolcaFm.controlChange(myVolcaFm.ccMIDI["lfo rate"], Std.rand2(0, 127));
+}
 
 /*
 // new RolandJP08 instance

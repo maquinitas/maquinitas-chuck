@@ -6,6 +6,7 @@
 // define relative paths of files of the library
 ["maq.inst.ck",
 "maq.inst.critter-and-guitari-bolsa-bass.ck",
+"maq.inst.korg-volca-fm.ck",
 "maq.inst.roland-jp-08.ck",
 "maq.inst.roland-sh-01a.ck",
 "maq.inst.roland-tb-03.ck",
