@@ -2,7 +2,11 @@
 
 ## About  
 
-maquinitas-chuck is the ChucK flavor of the maquinitas software library.  
+maquinitas-chuck is a project by [Aarón Montoya-Moraga](http://montoyamoraga.io/).
+
+maquinitas-chuck is a software library for controlling hardware MIDI instruments with the [ChucK](http://chuck.cs.princeton.edu/) programming language, intended for education, live coding, studio work, and live performance, and people interested in MIDI, computer music, generative music, sequencers, and randomness.
+
+maquinitas-chuck is the [ChucK](http://chuck.cs.princeton.edu/) flavor of the [maquinitas](https://github.com/maquinitas) collection of software libraries.
 
 ## Contents  
 
