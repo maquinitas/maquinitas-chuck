@@ -8,6 +8,8 @@ RolandJP08 myJP08;
 // or check Window->Device Browser for number
 myJP08.setupPort(0);
 
+// print number of MIDI CC parameter
+// <<< myJP08.ccMIDI["lfo rate"] >>>;
 
 while (true) {
     // note on
@@ -22,6 +24,9 @@ while (true) {
     myJP08.noteOff(note);
     // let time flow
     off :: second => now;
+    
+    // CC message
+    myJP08.controlChange(myJP08.ccMIDI["lfo rate"], Std.rand2(0, 127));
 }
 
 
