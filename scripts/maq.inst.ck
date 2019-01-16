@@ -1,7 +1,6 @@
 // maq.inst
 // base class for instruments
 
-
 // define maquinitasInstrument base class for instruments
 public class maquinitasInstrument extends Chugen {
     
@@ -19,6 +18,9 @@ public class maquinitasInstrument extends Chugen {
     // default value is 1
     // values between 1-16
     1 => int midiChannel;
+    
+    // declare array of strings for CC params
+    string[] paramsCC;
     
     function void setupChannel(int channel) {
         // define channel of the instrument
