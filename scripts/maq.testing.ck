@@ -125,6 +125,7 @@ while (true) {
 }
 */
 
+/*
 // new RolandTR08 instance
 RolandTR08 myTR08;
 // setup myTR08 port
@@ -154,6 +155,39 @@ while (true) {
     // CC message
     myTR08.controlChange(myTR08.ccMIDI["bd tune"], Std.rand2(0, 127));
 }
+*/
+
+
+// new RolandTR09 instance
+RolandTR09 myTR09;
+// setup myTR09 port
+// run chuck --probe on terminal
+// or check Window->Device Browser for number
+myTR09.setupPort(0);
+// <<< myTR09.notesMIDI.cap() >>>;
+// <<< myTR09.ccMIDInumbers.cap() >>>;
+// <<< myTR09.ccMIDInames.cap() >>>;
+
+// print number of MIDI CC parameter
+// <<< myTR09.ccMIDI["bd tune"] >>>;
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    myTR09.noteOn(myTR09.notesMIDI["bass drum 1"], velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    myTR09.noteOff(myTR09.notesMIDI["bass drum 1"]);
+    // let time flow
+    off :: second => now;
+    
+    // CC message
+    myTR09.controlChange(myTR09.ccMIDI["bd tune"], Std.rand2(0, 127));
+}
+
 
 
 <<< "maq.testing.ck finish">>>;

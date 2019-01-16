@@ -9,7 +9,8 @@
 "maq.inst.roland-jp-08.ck",
 "maq.inst.roland-sh-01a.ck",
 "maq.inst.roland-tb-03.ck",
-"maq.inst.roland-tr-08.ck"] @=> string relativePath[];
+"maq.inst.roland-tr-08.ck",
+"maq.inst.roland-tr-09.ck"] @=> string relativePath[];
 
 // iterate through all the relative paths
 for (0 => int i; i < relativePath.cap(); i++) {
