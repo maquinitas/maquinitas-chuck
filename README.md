@@ -14,7 +14,9 @@ The only requirement for this library is ChucK + miniAudicle, which can be downl
 
 ## Use
 
-For start using this library, run the [maq.init.ck](/scripts/maq.init.ck) script.
+To start using this library, either clone the repository or download the latest release from [github.com/maquinitas/maquinitas-chuck/releases]()https://github.com/maquinitas/maquinitas-chuck/releases.
+
+For loading this library, run the [maq.init.ck](/scripts/maq.init.ck) script.
 
 Afterwards, setup the corresponding MIDI port for using your hardware MIDI instrument.
 
