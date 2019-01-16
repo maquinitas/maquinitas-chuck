@@ -24,10 +24,12 @@ while (true) {
     myBolsaBass.noteOff(note);
     // let time flow
     off :: second => now;
-    
 }
+// myBolsaBass.startSequencer();
+// myBolsaBass.stopSequencer();
 */
 
+/*
 // new KorgVolcaFm instance
 KorgVolcaFm myVolcaFm;
 // setup myVolcaFm port
@@ -58,6 +60,9 @@ while (true) {
     // CC message
     myVolcaFm.controlChange(myVolcaFm.ccMIDI["lfo rate"], Std.rand2(0, 127));
 }
+// myVolcaFm.startSequencer();
+// myVolcaFm.stopSequencer();
+*/
 
 /*
 // new RolandJP08 instance
@@ -87,6 +92,8 @@ while (true) {
     // CC message
     myJP08.controlChange(myJP08.ccMIDI["lfo rate"], Std.rand2(0, 127));
 }
+// myJP08.startSequencer();
+// myJP08.stopSequencer();
 */
 
 /*
@@ -101,7 +108,7 @@ mySH01A.setupPort(0);
 // <<< mySH01A.ccMIDInames.cap() >>>;
 
 // print number of MIDI CC parameter
-// <<< myJP08.ccMIDI["lfo rate"] >>>;
+// <<< mySH01A.ccMIDI["lfo rate"] >>>;
 
 while (true) {
     // note on
@@ -120,6 +127,8 @@ while (true) {
     // CC message
     mySH01A.controlChange(mySH01A.ccMIDI["lfo rate"], Std.rand2(0, 127));
 }
+// mySH01A.startSequencer();
+// mySH01A.stopSequencer();
 */
 
 /*
@@ -153,6 +162,8 @@ while (true) {
     // CC message
     myTB03.controlChange(myTB03.ccMIDI["delay time"], Std.rand2(0, 127));
 }
+// myTB03.startSequencer();
+// myTB03.stopSequencer();
 */
 
 /*
@@ -185,9 +196,12 @@ while (true) {
     // CC message
     myTR08.controlChange(myTR08.ccMIDI["bd tune"], Std.rand2(0, 127));
 }
+
+// myTR08.startSequencer();
+// myTR08.stopSequencer();
 */
 
-
+/*
 // new RolandTR09 instance
 RolandTR09 myTR09;
 // setup myTR09 port
@@ -218,6 +232,9 @@ while (true) {
     myTR09.controlChange(myTR09.ccMIDI["bd tune"], Std.rand2(0, 127));
 }
 
+// myTR09.startSequencer();
+// myTR09.stopSequencer();
+*/
 
 
 <<< "maq.testing.ck finish">>>;
