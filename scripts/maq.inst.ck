@@ -20,7 +20,7 @@ public class maquinitasInstrument extends Chugen {
     1 => int midiChannel;
     
     // declare array of integers for CC params
-    int[] paramsCC;
+    int paramsCC[];
     
     // function for setup of MIDI channel
     function void setupChannel(int channel) {
