@@ -4,8 +4,9 @@
 <<<"maquinitas-chuck loading...">>>;
 
 // define relative paths of files of the library
-["maq.inst",
-"maq.inst.roland-sh-01a",
+["maq.inst.ck",
+"maq.inst.roland-jp-08.ck",
+"maq.inst.roland-sh-01a.ck",
 "maq.inst.roland-tb-03.ck"] @=> string relativePath[];
 
 // iterate through all the relative paths
