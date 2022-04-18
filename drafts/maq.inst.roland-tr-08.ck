@@ -1,7 +1,7 @@
 // maq.inst.roland-tr-08.ck
 // maquinitas chuck script for Roland TR-08
 
-public class RolandTR08 extends maquinitasInstrument {
+public class RolandTR08 extends maquinitas {
     
     // default MIDI channel 10 for Roland TR-08
     setupChannel(10);
@@ -44,3 +44,39 @@ public class RolandTR08 extends maquinitasInstrument {
         ccMIDInumbers[i] => ccMIDI[ccMIDInames[i]];
     }
 }
+
+/*
+// new RolandTR08 instance
+RolandTR08 myTR08;
+// setup myTR08 port
+// run chuck --probe on terminal
+// or check Window->Device Browser for number
+myTR08.setupPort(0);
+// <<< myTR08.notesMIDI.cap() >>>;
+// <<< myTR08.ccMIDInumbers.cap() >>>;
+// <<< myTR08.ccMIDInames.cap() >>>;
+
+// print number of MIDI CC parameter
+// <<< myTR08.ccMIDI["bd tune"] >>>;
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    myTR08.noteOn(myTR08.notesMIDI["bass drum 1"], velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    myTR08.noteOff(myTR08.notesMIDI["bass drum 1"]);
+    // let time flow
+    off :: second => now;
+    
+    // CC message
+    myTR08.controlChange(myTR08.ccMIDI["bd tune"], Std.rand2(0, 127));
+}
+
+// myTR08.startSequencer();
+// myTR08.stopSequencer();
+*/
+

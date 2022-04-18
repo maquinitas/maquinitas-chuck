@@ -1,8 +1,8 @@
 // maq.inst.roland-jp-08.ck
 // maquinitas chuck script for Roland JP-08
 
-// declare class RolandJP08 that inherits from maquinitasInstrument
-public class RolandJP08 extends maquinitasInstrument {
+// declare class RolandJP08 that inherits from maquinitas
+public class RolandJP08 extends maquinitas {
     
     // default MIDI channel 1 for Roland SH-01A
     setupChannel(1);
@@ -38,8 +38,37 @@ public class RolandJP08 extends maquinitasInstrument {
     for (0 => int i; i < ccMIDInumbers.cap(); i++) {
         ccMIDInumbers[i] => ccMIDI[ccMIDInames[i]];
     }
+   
 
-    
-    
 }
 
+
+// new RolandJP08 instance
+// RolandJP08 myJP08;
+// setup myJP08 port
+// run chuck --probe on terminal
+// or check Window->Device Browser for number
+myJP08.setupPort(0);
+
+// print number of MIDI CC parameter
+// <<< myJP08.ccMIDI["lfo rate"] >>>;
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int note;
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    myJP08.noteOn(note, velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    myJP08.noteOff(note);
+    // let time flow
+    off :: second => now;
+    
+    // CC message
+    myJP08.controlChange(myJP08.ccMIDI["lfo rate"], Std.rand2(0, 127));
+}
+// myJP08.startSequencer();
+// myJP08.stopSequencer();

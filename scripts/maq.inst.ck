@@ -1,8 +1,8 @@
 // maq.inst
 // base class for instruments
 
-// define maquinitasInstrument base class for instruments
-public class maquinitasInstrument extends Chugen {
+// define maquinitas base class for instruments
+public class maquinitas extends Chugen {
     
     // declare MidiOut variable
     MidiOut midiOut;

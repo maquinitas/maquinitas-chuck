@@ -1,7 +1,7 @@
 // maq.inst.roland-sh-01a.ck
 // maquinitas chuck script for Roland SH-01A
 
-public class RolandSH01A extends maquinitasInstrument {
+public class RolandSH01A extends maquinitas {
     // default MIDI channel 1 for Roland SH-01A
     setupChannel(1);
     
@@ -31,3 +31,39 @@ public class RolandSH01A extends maquinitasInstrument {
         ccMIDInumbers[i] => ccMIDI[ccMIDInames[i]];
     }
 }
+
+/*
+// new RolandSH01A instance
+RolandSH01A mySH01A;
+// setup mySH01A port
+// run chuck --probe on terminal
+// or check Window->Device Browser for number
+mySH01A.setupPort(0);
+// <<< mySH01A.notesMIDI.cap() >>>;
+// <<< mySH01A.ccMIDInumbers.cap() >>>;
+// <<< mySH01A.ccMIDInames.cap() >>>;
+
+// print number of MIDI CC parameter
+// <<< mySH01A.ccMIDI["lfo rate"] >>>;
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int note;
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    mySH01A.noteOn(note, velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    mySH01A.noteOff(note);
+    // let time flow
+    off :: second => now;
+    
+    // CC message
+    mySH01A.controlChange(mySH01A.ccMIDI["lfo rate"], Std.rand2(0, 127));
+}
+// mySH01A.startSequencer();
+// mySH01A.stopSequencer();
+*/
+

@@ -2,32 +2,35 @@
 
 ## About  
 
-maquinitas-chuck is a project by [Aarón Montoya-Moraga](http://montoyamoraga.io/).
+maquinitas-chuck is a project by montoyamoraga.
 
-maquinitas-chuck is a software library for controlling hardware MIDI instruments with the [ChucK](http://chuck.cs.princeton.edu/) programming language, intended for education, live coding, studio work, and live performance, and people interested in MIDI, computer music, generative music, sequencers, and randomness.
+maquinitas-chuck is a software library for controlling hardware MIDI instruments with the [ChucK](https://chuck.cs.princeton.edu/) programming language, intended for education, live coding, studio work, and live performance, and aimed at people interested in MIDI, computer music, generative music, sequencers, and randomness.
 
 maquinitas-chuck is the [ChucK](http://chuck.cs.princeton.edu/) flavor of the [maquinitas](https://github.com/maquinitas) collection of software libraries.
 
 ## Installation
 
-The only requirement for this library is ChucK + miniAudicle, which can be downloaded from the [ChucK website](http://chuck.cs.princeton.edu/).
+This library is intended to expand ChucK, which can be donwloaded and installed from the website [https://chuck.cs.princeton.edu/](https://chuck.cs.princeton.edu/).
 
 ## Use
 
-To start using this library, either clone the repository or download the latest release from [github.com/maquinitas/maquinitas-chuck/releases]().
+To start using this library, either clone the repository or download the latest release from [https://github.com/maquinitas/maquinitas-chuck/releases](https://github.com/maquinitas/maquinitas-chuck/releases).
 
-For loading this library, run the [maq.init.ck](/scripts/maq.init.ck) script.
+To load this library, run the [maq.init.ck](/scripts/maq.init.ck) ChucK script.
 
 Afterwards, setup the corresponding MIDI port for using your hardware MIDI instrument.
 
 If you want to see working examples, check out the [maq.testing.ck](/scripts/maq.testing.ck) script, where there are working examples with every instrument.
 
-## Contents  
+## Contents
 
-List of available ChucK scripts:
 
-* [maq.init.ck](/scripts/maq.init.ck), for loading maquinitas-chuck library.
-* [maq.inst.ck](/scripts/maq.inst.ck), base class for instruments.
+
+List of currently available ChucK scripts:
+
+* [maq.init.ck](/scripts/maq.init.ck), script to load the maquinitas-chuck library.
+* [maq.inst.ck](/scripts/maq.inst.ck), base class.
+
 * [maq.inst.critter-and-guitari-bolsa-bass.ck](/scripts/maq.inst.critter-and-guitari-bolsa-bass.ck), for controlling the Critter & Guitari Bolsa Bass instrument.
 * [maq.inst.korg-volca-fm.ck](/scripts/maq.inst.korg-volca-fm.ck), for controlling the Korg volca fm instrument.
 * [maq.inst.roland-jp-08.ck](/scripts/maq.inst.roland-jp-08.ck), for controlling the Roland JP-08 instrument.
@@ -43,7 +46,6 @@ In-progress drafts:
 * maq.inst.korg-volca-beats.ck
 * maq.inst.moog-minitaur.ck
 * maq.inst.novation-bass-station-ii.ck
-* maq.inst.waldorf-streichfett.ck
 
 ## Reference
 

@@ -1,7 +1,7 @@
 // maq.inst.roland-tr-09.ck
 // maquinitas chuck script for Roland TR-09
 
-public class RolandTR09 extends maquinitasInstrument {
+public class RolandTR09 extends maquinitas {
     
     // default MIDI channel 10 for Roland TR-09
     setupChannel(10);
@@ -43,3 +43,39 @@ public class RolandTR09 extends maquinitasInstrument {
         ccMIDInumbers[i] => ccMIDI[ccMIDInames[i]];
     }
 }
+
+/*
+// new RolandTR09 instance
+RolandTR09 myTR09;
+// setup myTR09 port
+// run chuck --probe on terminal
+// or check Window->Device Browser for number
+myTR09.setupPort(0);
+// <<< myTR09.notesMIDI.cap() >>>;
+// <<< myTR09.ccMIDInumbers.cap() >>>;
+// <<< myTR09.ccMIDInames.cap() >>>;
+
+// print number of MIDI CC parameter
+// <<< myTR09.ccMIDI["bd tune"] >>>;
+
+while (true) {
+    // note on
+    Std.rand2(0, 127) => int velocity;
+    Std.rand2f(0.2, 1.0) => float on;
+    Std.rand2f(0.2, 1.0) => float off;
+    myTR09.noteOn(myTR09.notesMIDI["bass drum 1"], velocity);
+    // let time flow
+    on :: second => now;
+    // note off
+    myTR09.noteOff(myTR09.notesMIDI["bass drum 1"]);
+    // let time flow
+    off :: second => now;
+    
+    // CC message
+    myTR09.controlChange(myTR09.ccMIDI["bd tune"], Std.rand2(0, 127));
+}
+
+// myTR09.startSequencer();
+// myTR09.stopSequencer();
+*/
+
