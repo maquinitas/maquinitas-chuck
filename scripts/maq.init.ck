@@ -8,13 +8,8 @@
 // hopefully there is a way to programatically
 // iterate through all the folders in chuck
 ["maq.inst.ck",
-"maq.inst.critter-and-guitari-bolsa-bass.ck",
-"maq.inst.korg-volca-fm.ck",
-"maq.inst.roland-jp-08.ck",
-"maq.inst.roland-sh-01a.ck",
-"maq.inst.roland-tb-03.ck",
-"maq.inst.roland-tr-08.ck",
-"maq.inst.roland-tr-09.ck"] @=> string relativePath[];
+"/korg/maq.inst.korg-volca-fm.ck",
+"/korg/maq.inst.korg-volca-beats.ck"] @=> string relativePath[];
 
 // iterate through all the relative paths
 for (0 => int i; i < relativePath.cap(); i++) {
