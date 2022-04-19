@@ -4,9 +4,8 @@
 <<<"maquinitas-chuck loading...">>>;
 
 // define relative paths of files of the library
-// TODO: moved this to different subfolders
-// hopefully there is a way to programatically
-// iterate through all the folders in chuck
+// TODO: find a way to programatically
+// iterate through all the folders
 ["maq.inst.ck",
 "/korg/maq.inst.korg-volca-fm.ck",
 "/korg/maq.inst.korg-volca-beats.ck"] @=> string relativePath[];
@@ -17,7 +16,7 @@ for (0 => int i; i < relativePath.cap(); i++) {
     // retrieve each file and build absolute path to it
     me.dir() + relativePath[i] => string absolutePath;
     
-    // add to chuck machine
+    // add to ChucK machine
     Machine.add(me.dir() + relativePath[i]);
     
     // print success message
