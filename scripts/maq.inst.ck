@@ -27,12 +27,15 @@ public class maquinitas extends Chugen {
   
     // function for setup of MIDI channel
     function void setupChannel(int channel) {
+        
         // define channel of the instrument
         channel => midiChannel;
+        
     }
     
     // function for setup of MIDI port
     function void setupPort(int port) {
+        
         // assign midiPort number
         // to check your midi interface, you have two options:
         // on miniAudicle
@@ -49,77 +52,104 @@ public class maquinitas extends Chugen {
     
     // function for MIDI note on
     function void noteOn(int note, int velocity) {
+        
         // note on message
         // data1: 143 + MIDI channel is note on
         // MIDI channel between 1-16
         143 + midiChannel => msg.data1;
+        
         // data2: note between 0-127
         note => msg.data2;
+        
         // data3: velocity between 0-127
         velocity => msg.data3;
+        
         // send MIDI message
         midiOut.send(msg);
+        
     }
     
     // function for MIDI note off
     function void noteOff(int note) {
+        
         // do note on message
         // data1: 143 + MIDI channel is note on
         // MIDI channel between 1-16
         143 + midiChannel => msg.data1;
+    
         // data2: note between 0-127
         note => msg.data2;
+        
         // data3: velocity 0 for note off
         0 => msg.data3;
+        
         // send MIDI message
         midiOut.send(msg);
+        
     }
        
     // function for turning off all MIDI notes
     function void allNotesOff() {
+        
         // iterate through every note
-        for (0 => int note; note < 127; note++) {       
+        for (0 => int note; note < 127; note++) {     
+              
             // do note on message
             // data1: 143 + MIDI channel is note on
             // MIDI channel between 1-16
             143 + midiChannel  => msg.data1;
+        
             // data2: note between 0-127
             note => msg.data2;
+            
             // data3: velocity 0 for note off
-            0 => msg.data3;   
+            0 => msg.data3;
+            
             // send midi message
             midiOut.send(msg);
-        }       
+            
+        }
     }
     
+    
     // function for changing a MIDI CC parameter
-    function void controlChange(int controller, int value) {    
+    function void controlChange(int controller, int value) {   
+         
         // first byte is 175 + MIDI channel for CC
         175 + midiChannel => msg.data1;
         // second byte of message is controller number
+        
         controller => msg.data2;
         // third byte of message is the value
+        
         value => msg.data3;
+        
         // send MIDI message
         midiOut.send(msg);  
+        
     }
     
     // function for starting sequencer
     function void startSequencer() {
+        
         // start message is 250
         250 => msg.data1;
         0 => msg.data2;
         0 => msg.data3;
+        
         // send MIDI message
         midiOut.send(msg);
+        
     }
     
     // function for stopping sequencer
     function void stopSequencer() {
+        
         // stop message is 252
         252 => msg.data1;
         0 => msg.data2;
         0 => msg.data3;
+        
         // send MIDI message
         midiOut.send(msg);
     }
