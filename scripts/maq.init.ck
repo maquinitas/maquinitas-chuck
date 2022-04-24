@@ -7,14 +7,12 @@
 // TODO: find a way to programatically
 // iterate through all the folders
 ["maq.inst.ck",
-"/korg/maq.inst.korg-volca-fm.ck",
-"/korg/maq.inst.korg-volca-beats.ck"] @=> string relativePath[];
+"/korg/korg-volca-beats.ck",
+"/korg/korg-volca-fm.ck"
+] @=> string relativePath[];
 
 // iterate through all the relative paths
 for (0 => int i; i < relativePath.cap(); i++) {
-    
-    // retrieve each file and build absolute path to it
-    me.dir() + relativePath[i] => string absolutePath;
     
     // add to ChucK machine
     Machine.add(me.dir() + relativePath[i]);

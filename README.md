@@ -18,7 +18,7 @@ to start using this library, either clone the repository or download the latest 
 
 to load this library, run the [maq.init.ck](/scripts/maq.init.ck) ChucK script.
 
-afterwards, setup the corresponding MIDI port for using your hardware MIDI instrument.
+afterwards, setup the corresponding MIDI port for your hardware.
 
 ## contents
 
@@ -26,9 +26,11 @@ Currently available ChucK scripts:
 
 * maq.init.ck: script to load the maquinitas-chuck library.
 * maq.inst.ck: base class.
-* maq.inst.korg-volca-fm.ck: for the Korg volca fm instrument.
+* korg/
+  * korg-volca-beats.ck
+  * korg-volca-fm.ck
 
-In-progress drafts:
+in-progress drafts:
 
 available on the [drafts/](drafts/) folder of this repository.
 

@@ -20,10 +20,10 @@ public class maquinitas extends Chugen {
     1 => int midiChannel;
     
     // declare array of integers for MIDI notes
-    int notesMIDI[0];
+    int midiNotes[0];
     
     // declare array of integers for MIDI CC params
-    int ccMIDI[0];
+    int midiControlChange[0];
   
     // function for setup of MIDI channel
     function void setupChannel(int channel) {
