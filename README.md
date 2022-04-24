@@ -28,6 +28,7 @@ Currently available ChucK scripts:
 * maq.inst.ck: base class
 * bastl/
   * bastl-microgranny-2.ck
+  * bastl-thyme.ck
 * korg/
   * korg-volca-beats.ck
   * korg-volca-fm.ck

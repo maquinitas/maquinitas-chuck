@@ -8,6 +8,7 @@
 // iterate through all the folders
 ["maq.inst.ck",
 "/bastl/bastl-microgranny-2.ck",
+"/bastl/bastl-thyme.ck",
 "/korg/korg-volca-beats.ck",
 "/korg/korg-volca-fm.ck"
 ] @=> string relativePath[];
