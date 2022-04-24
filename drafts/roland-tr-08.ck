@@ -1,5 +1,4 @@
-// maq.inst.roland-tr-08.ck
-// maquinitas chuck script for Roland TR-08
+// roland-tr-08.ck
 
 public class RolandTR08 extends maquinitas {
     

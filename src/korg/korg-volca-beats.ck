@@ -1,5 +1,4 @@
-// maq.inst.korg-volca-beats.ck
-// maquinitas chuck script for Korg volca beats
+// korg-volca-beats.ck
 
 public class KorgVolcaBeats extends maquinitas {
 

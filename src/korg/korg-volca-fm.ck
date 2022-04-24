@@ -1,5 +1,4 @@
-// maq.inst.korg-volca-fm.ck
-// maquinitas chuck script for Korg volca fm
+// korg-volca-fm.ck
 
 public class KorgVolcaFm extends maquinitas {
     // default MIDI channel 2 for Korg volca fm

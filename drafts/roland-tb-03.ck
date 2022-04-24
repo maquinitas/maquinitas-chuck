@@ -1,5 +1,4 @@
-// maq.inst.roland-tb-03.ck
-// maquinitas chuck script for Roland TB-03
+// roland-tb-03.ck
 
 public class RolandTB03 extends maquinitas {
     // default MIDI channel 2 for Roland TB-03

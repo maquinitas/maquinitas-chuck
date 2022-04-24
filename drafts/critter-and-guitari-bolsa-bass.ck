@@ -1,5 +1,4 @@
-// maq.inst.critter-and-guitari-bolsa-bass.ck
-// maquinitas chuck script for Critter & Guitari Bolsa Bass
+// critter-and-guitari-bolsa-bass.ck
 
 // declare class CritterBolsaBass that inherits from maquinitas
 public class CritterBolsaBass extends maquinitas {

@@ -1,5 +1,4 @@
-// maquinitas example
-// korg volca beats
+// example for korg volca beats
 
 // new instance
 KorgVolcaBeats beats;

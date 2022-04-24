@@ -1,5 +1,4 @@
-// maq.inst.roland-jp-08.ck
-// maquinitas chuck script for Roland JP-08
+// roland-jp-08.ck
 
 // declare class RolandJP08 that inherits from maquinitas
 public class RolandJP08 extends maquinitas {

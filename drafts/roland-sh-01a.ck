@@ -1,5 +1,4 @@
-// maq.inst.roland-sh-01a.ck
-// maquinitas chuck script for Roland SH-01A
+// roland-sh-01a.ck
 
 public class RolandSH01A extends maquinitas {
     // default MIDI channel 1 for Roland SH-01A

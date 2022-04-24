@@ -1,5 +1,4 @@
-// maq.inst.roland-tr-09.ck
-// maquinitas chuck script for Roland TR-09
+// roland-tr-09.ck
 
 public class RolandTR09 extends maquinitas {
     
