@@ -24,8 +24,10 @@ afterwards, setup the corresponding MIDI port for your hardware.
 
 Currently available ChucK scripts:
 
-* maq.init.ck: script to load the maquinitas-chuck library.
-* maq.inst.ck: base class.
+* maq.init.ck: script to load the maquinitas-chuck library
+* maq.inst.ck: base class
+* bastl/
+  * bastl-microgranny-2.ck
 * korg/
   * korg-volca-beats.ck
   * korg-volca-fm.ck
